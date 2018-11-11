@@ -1,0 +1,28 @@
+<h1>Getting started.</h1>
+
+<%= form_for(@club) do |f| %>
+	<div class="field">
+		<%= f.label :club_name %>
+		<%= f.text_field :club_name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :sport %>
+		<%= f.text_field :sport %>
+	</div>
+
+	<div class="field">
+		<%= f.label :club_role %>
+		<%= f.text_field :club_role %>
+	</div>
+
+	<div class="field">
+		<%= f.label :address %>
+		<%= f.text_field :address %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>

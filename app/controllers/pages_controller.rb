@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
   	@pros = Pro.all
+  	@clubs = Club.all
   end
 
   def about
@@ -8,4 +9,5 @@ class PagesController < ApplicationController
 
   def contact
   end
+
 end

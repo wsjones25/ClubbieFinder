@@ -1,0 +1,9 @@
+<h1><%= @club.club_name %></h1>
+
+<h4><%= link_to @club.active_status, toggle_active_status_club_path(@club) %></h4>
+<%= image_tag @club.main_image unless @club.main_image.nil? %>
+<p><%= @club.address %></p>
+<p><%= @club.sport %></p>
+<p><%= link_to "Change details", edit_club_path %></p>
+<p><%= link_to "Back", clubs_path %></p>
+<p><%= link_to "Delete", club_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>

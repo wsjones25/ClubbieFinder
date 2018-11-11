@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Club.create!(club_name: "Tring Cricket Club", sport: "Cricket", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close")
-Club.create!(club_name: "Harpenden Rugby Club", sport: "Rugby", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close")
-Club.create!(club_name: "UCS Old Boys RFC", sport: "Rugby", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close")
-Club.create!(club_name: "Wimbledon Running Club", sport: "Running", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close")
-Club.create!(club_name: "St Albans Squash Club", sport: "Squash", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close")
-Club.create!(club_name: "Hemel Rangers", sport: "Football", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close")
+Club.create!(club_name: "Tring Cricket Club", sport: "Cricket", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close", active_status: "inactive")
+Club.create!(club_name: "Harpenden Rugby Club", sport: "Rugby", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close", active_status: "inactive")
+Club.create!(club_name: "UCS Old Boys RFC", sport: "Rugby", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close", active_status: "active")
+Club.create!(club_name: "Wimbledon Running Club", sport: "Running", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close", active_status: "inactive")
+Club.create!(club_name: "St Albans Squash Club", sport: "Squash", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close", active_status: "active")
+Club.create!(club_name: "Hemel Rangers", sport: "Football", club_role: "Chairman", main_image: "http://placehold.it/300x200", address: "1 Garden Close", active_status: "inactive")
 
 puts "6 clubs created"
 

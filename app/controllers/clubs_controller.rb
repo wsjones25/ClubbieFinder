@@ -53,6 +53,6 @@ private
 	end
 
 	def set_club
-		@club = Club.find(params[:id])
+		@club = Club.friendly.find(params[:id])
 	end
 end

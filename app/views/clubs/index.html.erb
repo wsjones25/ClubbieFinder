@@ -1,0 +1,8 @@
+<h1>Clubs</h1>
+
+<% @clubs.each do |club| %>
+	<p><%= club.club_name %></p>
+	<p><%= club.address %></p>
+	<p><%= club.sport %></p>
+	<%= image_tag club.main_image %>
+<% end %>

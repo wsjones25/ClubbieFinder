@@ -17,10 +17,10 @@ class ClubsController < ApplicationController
 	def destroy
 		@club.destroy
 	    respond_to do |format|
-	      format.html { redirect_to pages_home_path, notice: 'Record was removed.' }
+	      format.html { redirect_to root_path, notice: 'Record was removed.' }
 	    end
 	end
-	
+
 	def index
 		@clubs = Club.all
 	end

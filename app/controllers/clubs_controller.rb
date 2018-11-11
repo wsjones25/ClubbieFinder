@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-	before_action :set_club, only: [:edit, :update]
+	before_action :set_club, only: [:show, :edit, :update]
 
 	def edit
 	end
@@ -33,7 +33,10 @@ class ClubsController < ApplicationController
 		end
 	end
 
-	
+	def show
+	end
+
+
 end
 
 private

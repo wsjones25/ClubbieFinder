@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
 
-  resources :clubs
+  resources :clubs, except: [:show]
+  get '/:id', to: 'clubs#show', as: 'club_show'
 
   root to:'pages#home'
   

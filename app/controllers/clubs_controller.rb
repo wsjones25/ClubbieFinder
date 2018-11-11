@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-	before_action :set_club, only: [:show, :edit, :update, :destroy]
+	before_action :set_club, only: [:show, :edit, :update, :destroy, :toggle_active_status]
 
 	def edit
 	end
@@ -12,6 +12,15 @@ class ClubsController < ApplicationController
 				format.html { render :edit}
 			end
 		end
+	end
+
+	def toggle_active_status
+		if @club.inactive?
+			@club.active!
+		elsif @club.active?
+			@club.inactive!
+		end
+		redirect_to club_show_path, notice: 'Club status was updated.'
 	end
 
 	def destroy
@@ -45,11 +54,12 @@ class ClubsController < ApplicationController
 
 
 
+
 end
 
 private
 	def club_params
-    	params.require(:club).permit(:club_name, :sport, :club_role, :address)
+    	params.require(:club).permit(:club_name, :sport, :club_role, :address, :active_status)
 	end
 
 	def set_club

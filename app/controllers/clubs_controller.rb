@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-	before_action :set_club, only: [:show, :edit, :update]
+	before_action :set_club, only: [:show, :edit, :update, :destroy]
 
 	def edit
 	end
@@ -14,6 +14,13 @@ class ClubsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@club.destroy
+	    respond_to do |format|
+	      format.html { redirect_to pages_home_path, notice: 'Record was removed.' }
+	    end
+	end
+	
 	def index
 		@clubs = Club.all
 	end
@@ -35,6 +42,7 @@ class ClubsController < ApplicationController
 
 	def show
 	end
+
 
 
 end

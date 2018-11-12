@@ -4,6 +4,7 @@ class Club < ApplicationRecord
 	extend FriendlyId
   	friendly_id :club_name, use: :slugged
   	has_many :teams
+  	has_many :people
 
   	after_initialize :set_defaults
 

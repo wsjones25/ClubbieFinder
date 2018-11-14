@@ -6,6 +6,7 @@ class Club < ApplicationRecord
   	friendly_id :club_name, use: :slugged
   	has_many :teams
   	has_many :people
+    has_many :campaigns
 
   after_initialize :set_defaults
 

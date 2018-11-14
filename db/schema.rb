@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_13_003959) do
+ActiveRecord::Schema.define(version: 2018_11_14_010702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "recruit_type"
+    t.string "player_type"
+    t.date "ideal_start_date"
+    t.text "job_description"
+    t.string "compensation"
+    t.string "passport_requirements"
+    t.bigint "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_campaigns_on_club_id"
+  end
 
   create_table "clubs", force: :cascade do |t|
     t.string "club_name"
@@ -70,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_003959) do
     t.index ["club_id"], name: "index_teams_on_club_id"
   end
 
+  add_foreign_key "campaigns", "clubs"
   add_foreign_key "people", "clubs"
   add_foreign_key "teams", "clubs"
 end

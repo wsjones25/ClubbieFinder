@@ -59,8 +59,34 @@ end
 
 private
 	def club_params
-    	params.require(:club).permit(:club_name, :sport, :club_role, :address, :active_status)
+    	params.require(:club).permit(
+			:club_name, 
+			:sport, 
+			:club_role, 
+			:main_image, 
+			:address, 
+			:active_status, 
+			:sport_icon, 
+			teams_attributes: [:name], 
+			people_attributes: [:first_name, :last_name, :position, :email], 
+			campaigns_attributes: [:recruit_type, :player_type, :ideal_start_date, :job_description, :compensation, :passport_requirements ]
+    	)
 	end
+
+	create_table "campaigns", force: :cascade do |t|
+    t.string "recruit_type"
+    t.string "player_type"
+    t.date "ideal_start_date"
+    t.text "job_description"
+    t.string "compensation"
+    t.string "passport_requirements"
+    t.bigint "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_campaigns_on_club_id"
+  end
+
+
 
 	def set_club
 		@club = Club.friendly.find(params[:id])

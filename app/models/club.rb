@@ -15,7 +15,7 @@ class Club < ApplicationRecord
                                                       attrs['passport_requirements'].blank? }
 
   has_many :people
-  accepts_nested_attributes_for :people
+  accepts_nested_attributes_for :people,
                                 reject_if: lambda { |attrs| 
                                                       attrs['first_name'].blank? || 
                                                       attrs['last_name'].blank? ||

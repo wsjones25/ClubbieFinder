@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name
 
   def initials
-  	self.first_name
+  	s1 = self.first_name[0]
+  	s2 = self.last_name[0]
+  	return s1 + s2
   end
 end

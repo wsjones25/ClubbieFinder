@@ -9,5 +9,26 @@
 <p><%= link_to "Delete", club_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 
 <hr>
-<%= params[:id] %>
+<h3>Teams</h3>
+<% @club.teams.each do |team| %>
+	<li><%= team.name %></li>
+<% end %>
 
+<hr>
+<h3>People</h3>
+<% @club.people.each do |person| %>
+	<li><%= person.first_name %></li>
+	<li><%= person.last_name %></li>
+	<li><%= person.position %></li>
+	<li><%= person.email %></li>
+<% end %>
+
+<hr>
+<h3>Recruitment campaigns</h3>
+<% @club.campaigns.each do |campaign| %>
+	<li><%= campaign.recruit_type %></li>
+	<li><%= campaign.player_type %></li>
+	<li><%= campaign.ideal_start_date %></li>
+	<li><%= campaign.job_description %></li>
+	<li><%= campaign.passport_requirements %></li>
+<% end %>

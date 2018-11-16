@@ -36,6 +36,9 @@ class ClubsController < ApplicationController
 
 	def new
 		@club = Club.new
+		2.times { @club.teams.build }
+		1.times { @club.campaigns.build }
+		1.times { @club.people.build }
 	end
 
 	def create

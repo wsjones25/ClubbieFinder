@@ -1,3 +1,4 @@
+<h3>General info</h3>
 <%= form_for(@club) do |f| %>
 	<div class="field">
 		<%= f.label :club_name %>
@@ -18,6 +19,71 @@
 		<%= f.label :address %>
 		<%= f.text_field :address %>
 	</div>
+	
+	<h3>Teams</h3>
+	 <ul>
+	 	<%= f.fields_for :teams do |team_form| %>
+	 		<li>
+	 			<%= team_form.label :name %>
+	 			<%= team_form.text_field :name %>
+	 		</li>
+	 		<hr>
+	 	<% end %>
+	 </ul>
+	
+	<h3>People</h3>
+	 <ul>
+	 	<%= f.fields_for :people do |person_form| %>
+	 		<li>
+	 			<%= person_form.label :first_name %>
+	 			<%= person_form.text_field :first_name %>
+	 		</li>
+	 		<li>
+	 			<%= person_form.label :last_name %>
+	 			<%= person_form.text_field :last_name %>
+	 		</li>
+	 		<li>
+	 			<%= person_form.label :position %>
+	 			<%= person_form.text_field :position %>
+	 		</li>
+	 		<li>
+	 			<%= person_form.label :email %>
+	 			<%= person_form.text_field :email %>
+	 		</li>
+	 		<hr>
+	 	<% end %>
+	 </ul>
+	
+	<h3>Campaigns</h3>
+	 <ul>
+	 	<%= f.fields_for :campaigns do |campaign_form| %>
+	 		<li>
+	 			<%= campaign_form.label :recruit_type %>
+	 			<%= campaign_form.text_field :recruit_type %>
+	 		</li>
+	 		<li>
+	 			<%= campaign_form.label :player_type %>
+	 			<%= campaign_form.text_field :player_type %>
+	 		</li>
+	 		<li>
+	 			<%= campaign_form.label :ideal_start_date %>
+	 			<%= campaign_form.text_field :ideal_start_date %>
+	 		</li>
+	 		<li>
+	 			<%= campaign_form.label :job_description %>
+	 			<%= campaign_form.text_field :job_description %>
+	 		</li>
+	 		<li>
+	 			<%= campaign_form.label :compensation %>
+	 			<%= campaign_form.text_field :compensation %>
+	 		</li>
+	 		<li>
+	 			<%= campaign_form.label :passport_requirements %>
+	 			<%= campaign_form.text_field :passport_requirements %>
+	 		</li>
+	 		<hr>
+	 	<% end %>
+	 </ul>
 
 	<div class="actions">
 		<%= f.submit %>

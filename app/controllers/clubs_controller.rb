@@ -32,6 +32,7 @@ class ClubsController < ApplicationController
 
 	def index
 		@clubs = Club.all
+		@page_title = "Sports clubs"
 	end
 
 	def new
@@ -39,6 +40,7 @@ class ClubsController < ApplicationController
 		2.times { @club.teams.build }
 		1.times { @club.campaigns.build }
 		1.times { @club.people.build }
+		@page_title = "New sports clubs"
 	end
 
 	def create
@@ -53,6 +55,8 @@ class ClubsController < ApplicationController
 	end
 
 	def show
+		@page_title = @club.club_name
+		@seo_keywords = @club.sport
 	end
 
 end

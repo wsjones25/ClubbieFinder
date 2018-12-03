@@ -9,4 +9,11 @@ module ApplicationHelper
 	      (link_to "Login", user_session_path)
 	    end
 	end
+
+	#def sample_helper
+		#content_tag(:div, "My content", class: "my-class") 
+	#end
+
+	# Can also take arguements
+
 end

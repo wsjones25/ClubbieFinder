@@ -1,0 +1,9 @@
+<p><%= club.club_name %></p>
+<p><%= club.address %></p>
+<p>
+	<%= club.sport %>
+	<%= image_tag club.sport_icon unless club.sport_icon.nil? %>		
+</p>
+<%= image_tag club.main_image unless club.main_image.nil? %>
+<p><%= link_to "More info", club_show_path(club) %></p>
+<br>

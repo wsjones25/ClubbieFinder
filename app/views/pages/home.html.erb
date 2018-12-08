@@ -1,4 +1,7 @@
-<h1>Hi, <%= current_user.initials if current_user %></h1>
+<% if !current_user.is_a?(GuestUser) %>
+	<h1>Hi, <%= current_user.initials %></h1>
+<% end %>
+
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <h2 class="heading">Sporty people</h2>

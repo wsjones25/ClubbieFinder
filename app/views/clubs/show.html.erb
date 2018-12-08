@@ -1,12 +1,17 @@
 <h1><%= @club.club_name %></h1>
 
-<h4><%= link_to @club.active_status, toggle_active_status_club_path(@club) %></h4>
+<% if logged_in?(:site_admin) %>
+	<h4><%= link_to @club.active_status, toggle_active_status_club_path(@club) %></h4>
+<% else %>
+	<h4><%= @club.active_status %></h4>
+<% end %>
+
 <%= image_tag @club.main_image unless @club.main_image.nil? %>
 <p><%= @club.address %></p>
 <p><%= @club.sport %></p>
-<p><%= link_to "Change details", edit_club_path %></p>
+<p><%= link_to "Change details", edit_club_path if logged_in?(:site_admin) %></p>
 <p><%= link_to "Back", clubs_path %></p>
-<p><%= link_to "Delete", club_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<p><%= link_to "Delete", club_path, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></p>
 
 <hr>
 <h3>Teams</h3>

@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
 	before_action :set_club, only: [:show, :edit, :update, :destroy, :toggle_active_status]
+	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
 	def edit
 	end

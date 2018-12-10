@@ -20,7 +20,6 @@ Pro.create!(date_of_birth: Date.parse('1987-01-11'), nationality: "Austrlian", r
 
 puts "2 pros created"
 
-
 Campaign.create!(recruit_type: "Elite player & coach", ideal_start_date: Date.parse('2019-01-11'), job_description: "Require a player to lead the Men's 1st XI both on and off the field as well as be a key member of the entire club coaching setup", compensation: "Competitive", passport_requirements: "British national", club_id: Club.last.id)
 Campaign.create!(recruit_type: "Volunteer", ideal_start_date: Date.parse('2019-02-25'), job_description: "Require volunteers to help with junior coaching on a sunday", compensation: "None", passport_requirements: "British national", club_id: Club.last.id)
 Campaign.create!(recruit_type: "Coach", ideal_start_date: Date.parse('2019-01-20'), job_description: "Experienced coach required to lead the coaching of the Mens teams", compensation: "Competitive", passport_requirements: "British national", club_id: Club.last.id)

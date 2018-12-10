@@ -31,7 +31,7 @@ class Club < ApplicationRecord
 
   	# Setting a default value of the main_image.
 	def set_defaults
-		self.main_image ||= Placeholder.image_generator(height: '200', width: '300')
-    self.sport_icon ||= Placeholder.image_generator(height: '40', width: '40')
+		self.main_image ||= PlaceholderConcern.image_generator(height: '200', width: '300')
+    self.sport_icon ||= PlaceholderConcern.image_generator(height: '40', width: '40')
 	end
 end

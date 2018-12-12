@@ -1,4 +1,4 @@
-<% if !current_user.is_a?(GuestUser) %>
+<% if current_user.is_a?(User) %>
 	<h1>Hi, <%= current_user.initials %></h1>
 <% end %>
 

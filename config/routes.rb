@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
-  devise_for :club_users, path: 'club_user'
+  devise_for :users, path: 'users', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+  devise_for :club_users, path: 'club_users'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  get 'login', to: 'pages#login'
+  get 'sign_up', to: 'pages#sign_up'
 
   resources :clubs, except: [:show] do 
   	member do 
